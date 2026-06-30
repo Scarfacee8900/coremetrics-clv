@@ -123,14 +123,14 @@ Cohort analysis organizes users into tracking buckets based on a shared mileston
 
 
 1. **Defining Cohorts**: Grouped data by `CustomerID` and isolated the minimum `InvoiceMonth` value.
-   $$\[\text{Cohort Month} = \min(\text{InvoiceMonth})_{\text{CustomerID}}\]$$
+   \[\text{Cohort Month} = \min(\text{InvoiceMonth})_{\text{CustomerID}}\]
 2. **Calculating Cohort Index**: Calculated the elapsed monthly steps between a transaction date and the customer's baseline Cohort Month:
-   $$\[\text{Cohort Index} = (\text{Year}_{\text{diff}} \times 12) + \text{Month}_{\text{diff}} + 1\]SS
+   \[\text{Cohort Index} = (\text{Year}_{\text{diff}} \times 12) + \text{Month}_{\text{diff}} + 1\]
    *An index of 1 signifies that the transaction occurred within the exact same month as the initial acquisition.*
 3. **Aggregating Counts**: Structured the unique `CustomerID` counts across overlapping combinations of Cohort Months and Cohort Indexes.
 4. **Pivoting Structure**: Transformed the long table structure into a wide layout where the rows represent specific Cohort Months and columns represent sequential Cohort Indexes.
 5. **Calculating Retention Rates**: Divided the customer count of an active index cell by the starting population baseline of that cohort (Index 1):
-   $$\[\text{Retention Rate} = \frac{\text{Cohort Pivot Value}_{(\text{Index } n)}}{\text{Cohort Size}_{(\text{Index 1})}}\]$$
+   \[\text{Retention Rate} = \frac{\text{Cohort Pivot Value}_{(\text{Index } n)}}{\text{Cohort Size}_{(\text{Index 1})}}\]
 6. **Heatmap Generation**: Rendered standard percentage values using `sns.heatmap(retention_matrix, annot=True, cmap='YlGnBu', fmt='.0%')`.
 
 ### 3. Key Observations & Recommendations
