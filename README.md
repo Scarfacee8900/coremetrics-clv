@@ -129,8 +129,8 @@ Cohort analysis organizes users into tracking buckets based on a shared mileston
 $$\text{Cohort Index} = (\text{Year}_{\text{diff}} \times 12) + \text{Month}_{\text{diff}} + 1$$
 
 
-    *An index of 1 signifies that the transaction occurred within the exact same month as the initial acquisition.*
-    
+  *An index of 1 signifies that the transaction occurred within the exact same month as the initial acquisition.*
+
 
 3. **Aggregating Counts**: Structured the unique `CustomerID` counts across overlapping combinations of Cohort Months and Cohort Indexes.
 
